@@ -1,6 +1,10 @@
 #include<stdio.h>
 
-/* This a simple program to print to the screen using puts() function  */
+/**
+ * main - just to print the text
+ * Description: still just to display the text
+ * Return: return value here is 0
+ */
 
 int main(void)
 {
