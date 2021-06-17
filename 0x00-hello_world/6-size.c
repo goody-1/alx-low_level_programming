@@ -2,7 +2,8 @@
 
 /**
  * main - prints size of various types
- * Description: the program just prints the sizes of the various types on the machine it is run on
+ * Description: the program just prints the sizes of the various 
+ * types on the machine it is run on
  * Return: this return value of 0 as desired
  */
 
