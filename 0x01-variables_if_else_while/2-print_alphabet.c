@@ -4,7 +4,7 @@
 /**
  * main - print lowercase characters of the english alphabet
  *
- * Return: return value 
+ * Return: return value
  */
 
 int main(void)
@@ -16,7 +16,7 @@ int main(void)
 		putchar(ch);
 	}
 	putchar('\n');
-		
+
 	return (0);
 
 }
