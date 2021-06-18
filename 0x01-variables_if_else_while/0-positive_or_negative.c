@@ -23,15 +23,16 @@ int main(void)
 	/* your code goes there */
 	if (n > 0) 
 	{
-		printf("%d is positive");
+		printf("%ld is positive");
 	}
 	else if (n == 0)
 	{
-		print("%d is zero");	
+		print("%ld is zero");	
 	}
 	else
 	{
-		print("%d is negative");
+		print("%ld is negative");
 	}
 	return (0);
 }
+
