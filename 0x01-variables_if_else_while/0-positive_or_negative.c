@@ -7,7 +7,7 @@
 
 /**
  * main - random number
- * Description: generates a random number for n 
+ * Description: generates a random number for n
  * each time the program is run
  *
  * Return: always return 0
@@ -22,13 +22,13 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 
 	/* your code goes there */
-	if (n > 0) 
+	if (n > 0)
 	{
 		printf("%d is positive\n", n);
 	}
 	else if (n == 0)
 	{
-		printf("%d is zero\n", n);	
+		printf("%d is zero\n", n);
 	}
 	else
 	{
