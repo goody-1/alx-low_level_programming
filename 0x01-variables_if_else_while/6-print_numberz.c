@@ -2,18 +2,18 @@
 #include <stdio.h>
 
 /**
- * main - print numbers from 0 to 9, using char
+ * main - print numbers from 0 to 9, not using char
  *
  * Return: return value
  */
 
 int main(void)
 {
-	char ch;
+	int x;
 	
-	for (ch = '0'; ch <= '9'; ch++)
+	for (x = 0; x <= '9'; x++)
 	{
-		putchar(ch);
+		putchar(x);
 	}
 	
 	putchar('\n');
