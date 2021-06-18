@@ -21,7 +21,7 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 
 	/* your code goes there */
-	digit = abs(n)%10;
+	digit = abs(n) % 10;
 
 	if (n < 0)
 	{
