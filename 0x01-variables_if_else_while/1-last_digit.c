@@ -15,13 +15,12 @@
 int main(void)
 {
 	int n;
+	int digit;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
 	/* your code goes there */
-	int digit;
-
 	digit = abs(n)%10;
 
 	if (n > 0)
