@@ -10,8 +10,10 @@
 int main(void)
 {
 	char * text = "Holberton";
+	
+	int index;
 
-	for(int index = '0'; index <='9'; index++ )
+	for(index = '0'; index <='9'; index++ )
 	{
 		_putchar(text[index]);
 	}
