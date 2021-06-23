@@ -10,8 +10,6 @@
 
 int main(void)
 {
-	char ch;
-
 	print_alphabet();
 
 	return (0);
