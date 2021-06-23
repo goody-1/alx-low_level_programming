@@ -1,3 +1,9 @@
+#ifndef HOLBERTON_H
+
+#define HOLBERTON_H_
+
 int _putchar(char c);
 
-int print_alphabet(void);
+void print_alphabet(void);
+
+#endif
