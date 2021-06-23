@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	char text = "Holberton";
+	char * text = "Holberton";
 
 	for(int index = '0'; index <='9'; index++ )
 	{
