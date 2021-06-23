@@ -9,11 +9,11 @@
 
 int main(void)
 {
-	char * text = "Holberton";
-	
+	char *text = "Holberton";
+
 	int index;
 
-	for(index = '0'; index <='9'; index++ )
+	for (index = '0'; index <= '9'; index++)
 	{
 		_putchar(text[index]);
 	}
