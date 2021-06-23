@@ -13,11 +13,12 @@ int main(void)
 
 	int index;
 
-	for (index = 0; index <= 9; index++)
+	for (index = 0; index <= 8; index++)
 	{
 		_putchar(text[index]);
 	}
 
 	_putchar('\n');
+
 	return (0);
 }
