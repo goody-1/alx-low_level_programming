@@ -11,14 +11,7 @@ int main(void)
 {
 	char *text = "Holberton";
 
-	int index;
-
-	for (index = 0; index <= 8; index++)
-	{
-		_putchar(text[index]);
-	}
-
-	_putchar('\n');
+	print_alphabet;
 
 	return (0);
 }
