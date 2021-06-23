@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	char *text = "Holberton";
+/*	char *text = "Holberton";
 
 	int index;
 
@@ -18,6 +18,7 @@ int main(void)
 		_putchar(text[index]);
 	}
 	_putchar('\n');
-
+*/
+	_putchar('G');
 	return (0);
 }
