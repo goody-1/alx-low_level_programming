@@ -14,10 +14,8 @@
  *
  */
 
-void positive_or_negative(int)
+void positive_or_negative(int n)
 {
-	int n;
-
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
@@ -34,6 +32,6 @@ void positive_or_negative(int)
 	{
 		printf("%d is negative\n", n);
 	}
-	return void;
+	return;
 }
 
