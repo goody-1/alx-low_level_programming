@@ -14,7 +14,7 @@
  *
  */
 
-int main(void)
+int sign_test(void)
 {
 	int n;
 
