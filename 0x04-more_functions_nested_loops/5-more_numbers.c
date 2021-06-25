@@ -16,15 +16,15 @@ void more_numbers(void)
 	{
 		for (num = 0; num <= 14; num++)
 		{
-			c = num;
+			c = num;    /* put in a store*/
 
 			if (num > 9)
 			{
-				_putchar('1');
+				_putchar('1'); /* print 1 first when num is greater than 9 */
 				
-				c = num % 10;
+				c = num % 10; /* then change c to the next digit */
 			}
-			_putchar('0' + c);
+			_putchar('0' + c); /* convert c to a character putchar can find */
 		}
 
 		_putchar('\n');
