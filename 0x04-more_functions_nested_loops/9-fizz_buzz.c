@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include <stdio.h>
 
 /**
 * main - fizzbuzz program
@@ -26,7 +26,7 @@ int main(void)
 		}
 		else
 		{
-			printf(count);
+			printf('' + count);
 		}
 
 		printf(' ');
