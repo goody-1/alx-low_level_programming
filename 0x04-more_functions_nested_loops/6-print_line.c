@@ -8,7 +8,7 @@
 
 void print_line(int n)
 {
-	int count = 1;
+	int count;
 
 	if (n == 0)
 	{
@@ -16,7 +16,7 @@ void print_line(int n)
 	}
 	else
 	{
-		while (count <= n)
+		for (count = 1; count <= n; count++)
 		{
 			_putchar('-');
 		}
