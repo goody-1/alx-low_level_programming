@@ -6,7 +6,7 @@
 * Return: no return (return is void)
 */
 
-void main(int)
+int main(int)
 {
 	int num = 612852475143;
 	int count;
@@ -19,5 +19,7 @@ void main(int)
 		}
 		_putchar('\n');
 	}
+
+	return (0);
 }
 
