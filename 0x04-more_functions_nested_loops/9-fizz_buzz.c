@@ -26,7 +26,7 @@ int main(void)
 		}
 		else
 		{
-			printf('' + count);
+			printf('%d' + count);
 		}
 
 		printf(' ');
