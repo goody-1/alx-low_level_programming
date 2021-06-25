@@ -29,7 +29,7 @@ int main(void)
 			printf("%i", count);
 		}
 
-		if (count != 0)
+		if (count != 100)
 		{
 			printf(" ");
 		}
