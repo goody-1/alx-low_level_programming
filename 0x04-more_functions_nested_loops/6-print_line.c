@@ -8,8 +8,6 @@
 
 void print_line(int n)
 {
-	int count;
-
 	if (n == 0)
 	{
 		_putchar('\n');
