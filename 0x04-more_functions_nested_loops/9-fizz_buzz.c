@@ -29,12 +29,8 @@ int main(void)
 			printf("%d", count);
 		}
 
-		if (count != 100)
-		{
-			printf(" ");
-		}
+		printf(" ");
 	}
 
 	return (0);
 }
-
