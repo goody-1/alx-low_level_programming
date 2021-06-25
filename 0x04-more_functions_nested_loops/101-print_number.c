@@ -8,35 +8,22 @@
 
 void print_number(int n)
 {
-	char c;
+	unsigned int c;
 
-	if (n >= 0 && n <= 9)
-	{
-		_putchar('0' + n);
-	}
-	else if (n < 0)
-	{
-		n = -n;
+	c = n;
 
-		if (n >= 0 && n <= 9)
-		{
-			_putchar('-');
-			_putchar('0' + n);
-		}
-		else
-		{
-			c = n % 10;
-			_putchar('-');
-			_putchar('1');
-			_putchar('0' + c);
-		}
-	}
-	else
+	if (n < 0)
 	{
-		c = n % 10;
-		_putchar('1');
-		_putchar('0' + c);
+		_putchar('-');
+		c = -n;
 	}
+
+	if (c / 10)
+	{
+		print_number(c /10);
+	}
+
+	_putchar((c % 10) + '0');
 
 }
 
