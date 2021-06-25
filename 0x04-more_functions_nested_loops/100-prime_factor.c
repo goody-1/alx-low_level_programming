@@ -15,7 +15,7 @@ int main(void)
 	{
 		if (num % count == 0 && num % count != 1)
 		{
-			printf("%d", count);
+			printf("%ld", count);
 		}
 		printf("\n");
 	}
