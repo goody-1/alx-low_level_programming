@@ -13,7 +13,7 @@ int main(void)
 
 	for (count = num - 1; count > 1; count--)
 	{
-		if (num % count == 0 && num % count != 1)
+		if (num % count == 0)
 		{
 			printf("%ld", count);
 		}
