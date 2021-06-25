@@ -29,7 +29,10 @@ int main(void)
 			printf("%i", count);
 		}
 
-		putchar(' ');
+		if (count != 100)
+		{
+			putchar(' ');
+		}
 	}
 
 	return (0);
