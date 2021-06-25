@@ -17,8 +17,9 @@ int main(void)
 		{
 			printf("%ld", count);
 		}
-		printf("\n");
 	}
+
+	prinf('\n');
 
 	return (0);
 }
