@@ -6,7 +6,7 @@
 * Return: no return (return is void)
 */
 
-int main(int)
+int main(void)
 {
 	int num = 612852475143;
 	int count;
@@ -17,7 +17,7 @@ int main(int)
 		{
 			printf("%d", count);
 		}
-		_putchar('\n');
+		printf("\n");
 	}
 
 	return (0);
