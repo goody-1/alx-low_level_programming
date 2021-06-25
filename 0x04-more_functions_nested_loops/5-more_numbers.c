@@ -20,7 +20,7 @@ void more_numbers(void)
 		}
 		for (num = '0'; num <= '4'; num++)
 		{
-			_putchar('1' + num);
+			_putchar(1 + num);
 		}
 
 		_putchar('\n');
