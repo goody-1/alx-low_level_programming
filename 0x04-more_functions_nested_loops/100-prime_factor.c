@@ -8,8 +8,8 @@
 
 int main(void)
 {
-	int num = 612852475143;
-	int count;
+	long int num = 612852475143;
+	long int count;
 
 	for (count = num - 1; count > 1; count--)
 	{
