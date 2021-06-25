@@ -10,7 +10,7 @@ void print_number(int n)
 {
 	char c;
 
-	if (n >= 0 && n =< 9)
+	if (n >= 0 && n <= 9)
 	{
 		_putchar('0' + n);
 	}
