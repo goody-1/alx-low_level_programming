@@ -29,7 +29,10 @@ int main(void)
 			printf("%d", count);
 		}
 
-		printf(" ");
+		if (count != 100)
+		{
+			printf(" ");
+		}
 	}
 
 	return (0);
