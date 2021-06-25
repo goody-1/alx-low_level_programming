@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-* print_most_numbers - prints numbers 0 to 9
+* print_square - prints numbers 0 to 9
 * @size: size of square
 * Return: no return (return is void)
 */
