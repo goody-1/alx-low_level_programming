@@ -8,10 +8,10 @@
 
 void more_numbers(void)
 {
+	int counter = 1;
 	char num;
-	int counter;
 
-	for (counter = '1'; counter <= '10'; counter++)
+	while (counter <= 10)
 	{
 		for (num = '0'; num <= '14'; num++)
 		{
@@ -19,6 +19,7 @@ void more_numbers(void)
 		}
 
 		_putchar('\n');
+		counter++;
 	}
 
 	_putchar('\n');
