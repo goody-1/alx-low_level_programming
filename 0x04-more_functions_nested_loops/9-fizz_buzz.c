@@ -6,7 +6,7 @@
 * Return: no return (return is void)
 */
 
-void main(void)
+int main(void)
 {
 	int count;
 
@@ -32,5 +32,6 @@ void main(void)
 		printf(' ');
 	}
 
+	return (0);
 }
 
