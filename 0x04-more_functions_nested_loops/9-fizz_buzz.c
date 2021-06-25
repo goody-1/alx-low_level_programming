@@ -29,7 +29,7 @@ int main(void)
 			printf("%i", count);
 		}
 
-		printf(" ");
+		putchar(' ');
 	}
 
 	return (0);
