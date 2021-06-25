@@ -2,7 +2,7 @@
 
 /**
 * print_line - prints line in terminal
-*
+* @n: this is the number of times the character _ should be printed
 * Return: no return (return is void)
 */
 
