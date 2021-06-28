@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-* print_rev -  reverses a string
+* rev_string -  reverses a string
 * @s: pointer
 * Return: void
 */
@@ -20,7 +20,7 @@ void rev_string(char *s)
 
 	for (j = k; j >= 0; j--)
 	{
-		s[k-j] = s[j];
+		s[k - j] = s[j];
 	}
 
 	_putchar('\n');
