@@ -22,26 +22,19 @@ void rev_string(char *s)
 	begin_ptr = s;
 	end_ptr = s;
 
-	// Move the end_ptr to the last character
-
-	for (j = 0; j < len_of_str; j++)
-	{
-		end_ptr++;
-	}
-
-	// Swap the char from start and end
-	// index using begin_ptr and end_ptr
+	/* Move the end_ptr to the last character */
+	/* index using begin_ptr and end_ptr */
 
 	for (j = 0; j < len_of_str / 2; j++)
 	{
 
-		// swap character
+		/* swap character */
 
 		ch = *end_ptr;
 		*end_ptr = *begin_ptr;
 		*begin_ptr = ch;
 
-		// update pointers positions
+		/* update pointers positions */
 
 		begin_ptr++;
 		end_ptr--;
