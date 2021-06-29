@@ -39,7 +39,7 @@ void rev_string(char *s)
         *end_ptr = *begin_ptr;
         *begin_ptr = ch;
 
-        /* update pointers positions */*
+        /* update pointers positions */
         begin_ptr++;
         end_ptr--;
 	}
