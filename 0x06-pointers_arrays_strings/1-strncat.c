@@ -9,12 +9,13 @@
 *
 * @dest: this is the destination of the result
 * @src: this is the string to be added to the dest
+* @n: maximum number of bytes to be used from src
 *
 * Return: a pointer to the resulting string dest;
 */
 
 
-char *_strncat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 	int i = 0, j = 0, m;
 
