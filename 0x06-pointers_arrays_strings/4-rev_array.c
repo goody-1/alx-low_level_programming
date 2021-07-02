@@ -13,7 +13,7 @@
 void reverse_array(int *a, int n)
 {
 	int s[n];
-	int i=0, c, j=0;
+	int i = 0, c, j = 0;
 
 	for (c = n - 1; c >= 0; c--)
 	{
@@ -33,12 +33,14 @@ void reverse_array(int *a, int n)
 
 	/* *a = *s; */
 
-	/* while (j < n)
+	/*
+	 * while (j < n)
 	 * {
 	 * printf("%d ", a[j]);
 	 * j++;
 	 * }
-	 * */
+	 *
+	*/
 
 }
 
