@@ -17,7 +17,7 @@ char *cap_string(char *str)
 				str[i] == '.' || str[i] == '!' || str[i] == '?' ||
 				str[i] == '"' || str[i] == '(' || str[i] == ')' ||
 				str[i] == '{' || str[i] == '}'  || str[i] == 10  ||
-				str[i] == 9)
+				str[i] == 9 || str[i] == 11 || str[i] == 13)
 		{
 			if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
 			{
