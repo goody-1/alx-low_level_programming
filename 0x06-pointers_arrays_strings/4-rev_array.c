@@ -12,7 +12,9 @@
 
 void reverse_array(int *a, int n)
 {
-	int s[n];
+	#define SIZE n
+
+	int s[SIZE];
 	int i = 0, c, j = 0;
 
 	for (c = n - 1; c >= 0; c--)
