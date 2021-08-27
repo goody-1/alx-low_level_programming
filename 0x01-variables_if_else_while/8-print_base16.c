@@ -12,7 +12,7 @@ int main(void)
 {
 	char ch;
 
-	for (ch = '0'; ch <= 'F'; ch++)
+	for (ch = '0'; ch <= '9'; ch++)
 	{
 		ch = tolower(ch);
 		putchar(ch);
