@@ -2,19 +2,22 @@
 #include <stdio.h>
 
 /**
- * main - print lowercase characters of the english alphabet
+ * main - prints all possible combinations of single-digit numbers.
  *
- * Return: return value
+ * Return: returns void
  */
 
 int main(void)
 {
 	int ch;
 
-	for (ch = '0'; ch <= '9'; ch++)
+	for (ch = '0'; ch <= '8'; ch++)
 	{
-		putchar(ch, ', ');
+		putchar(ch);
+		putchar(',');
 	}
+
+	putchar('9');
 
 	putchar('\n');
 
