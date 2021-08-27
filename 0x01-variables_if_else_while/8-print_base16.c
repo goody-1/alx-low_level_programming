@@ -18,6 +18,12 @@ int main(void)
 		putchar(ch);
 	}
 
+	for (ch = 'a'; ch <= 'f'; ch++)
+	{
+		ch = tolower(ch);
+		putchar(ch);
+	}
+
 	putchar('\n');
 
 	return (0);
