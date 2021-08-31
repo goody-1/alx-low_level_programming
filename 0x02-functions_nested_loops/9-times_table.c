@@ -34,7 +34,7 @@ void times_table(void)
  * Return: returns no value
 **/
 
-void my_putchar(var) {
+void my_putchar(int var) {
      
     /* print '-' for negative numbers */
     if (var < 0) {
