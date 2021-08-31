@@ -1,8 +1,8 @@
 #include "_putchar.h"
 
 /**
- * main - check the code for ALX School students.
- *
+ * print_alphabet - print lowercase characters of the alphabet
+ *	
  * Return: Always 0.
 **/
 
