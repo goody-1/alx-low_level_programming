@@ -19,11 +19,11 @@ void times_table(void)
 	        
 	        if (j != 9)
 	        {
-	        putchar(',');
-	        putchar(' ');
+	        _putchar(',');
+	        _putchar(' ');
 	        }
 	    }
-	    putchar('\n');
+	    _putchar('\n');
 	}
 }
 
@@ -38,7 +38,7 @@ void my_putchar(var) {
      
     /* print '-' for negative numbers */
     if (var < 0) {
-        putchar('-');
+        _putchar('-');
         var = var * -1;
     }
   
@@ -49,5 +49,5 @@ void my_putchar(var) {
     if (var/10)
         my_putchar(var/10);
   
-    putchar(var%10 + '0');
+    _putchar(var%10 + '0');
 }
