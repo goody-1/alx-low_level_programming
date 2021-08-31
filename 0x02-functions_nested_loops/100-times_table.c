@@ -1,5 +1,7 @@
 #include "main.h"
 
+void my_putchar(int var);
+
 /**
  * print_times_table - prints the n times table, starting with 0
  * @n: limit of times table
