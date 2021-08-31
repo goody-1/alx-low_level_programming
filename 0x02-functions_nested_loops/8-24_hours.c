@@ -3,10 +3,6 @@
 /**
  * jack_bauer - prints every minute of the day of Jack Bauer,
  * starting from 00:00 to 23:59
- * minute - minute section
- * hour - hour section
- * @h: hour integer
- * @m: minute integer
  * Return: returns value of last digit
 **/
 
@@ -33,7 +29,11 @@ void jack_bauer(void)
 	}
 }
 
-
+/**
+ * minute - minute section
+ * @m: minute integer
+ * Return: returns value of minute
+**/
 int minute(int m)
 {
 	if (m < 10)
@@ -64,6 +64,12 @@ int minute(int m)
 	return (m);
 }
 
+
+/**
+ * hour - hour section
+ * @h: hour integer
+ * Return: returns value of hour
+**/
 int hour(int h)
 {
 	if (h < 10)
