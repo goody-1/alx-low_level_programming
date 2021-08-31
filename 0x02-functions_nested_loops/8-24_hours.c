@@ -17,49 +17,49 @@ void jack_bauer(void)
 		{
 			if (h < 10)
 			{
-				putchar('0');
+				_putchar('0');
 			}
 			else if (h < 20)
 			{
-				putchar('1');
+				_putchar('1');
 			}
 			else
 			{
-				putchar('2');
+				_putchar('2');
 			}
 
-			putchar(h % 10 + '0');
-			putchar(':');
+			_putchar(h % 10 + '0');
+			_putchar(':');
 
 			/* for the minute part */
 
 			if (m < 10)
 			{
-				putchar('0');
+				_putchar('0');
 			}
 			else if (m < 20)
 			{
-				putchar('1');
+				_putchar('1');
 			}
 			else if (m < 30)
 			{
-				putchar('2');
+				_putchar('2');
 			}
 			else if (m < 40)
 			{
-				putchar('3');
+				_putchar('3');
 			}
 			else if (m < 50)
 			{
-				putchar('4');
+				_putchar('4');
 			}
 			else
 			{
-				putchar('5');
+				_putchar('5');
 			}
 
-			putchar(m % 10 + '0');
-			putchar('\n');
+			_putchar(m % 10 + '0');
+			_putchar('\n');
 		}
 	}
 }
