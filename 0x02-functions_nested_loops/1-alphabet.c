@@ -1,16 +1,21 @@
-#include "holberton.h"
+#include "_putchar.h"
 
 /**
- * main - print lowercase characters of the english alphabet
+ * main - check the code for ALX School students.
  *
- * Return: return value
- * 
- */    
+ * Return: Always 0.
+**/
 
-
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
+	char ch;
+
+	for (ch = 'a'; ch <= 'z'; ch++)
+	{
+		_putchar(ch);
+	}
+
+	_putchar('\n');
 
 	return (0);
 }
