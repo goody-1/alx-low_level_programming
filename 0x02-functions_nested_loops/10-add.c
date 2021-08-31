@@ -13,6 +13,7 @@ int add(int p, int r)
 {
 	int sum  = p + r;
 	my_putchar(sum);
+	return (sum);
 }
 
 
