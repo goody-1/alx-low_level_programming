@@ -29,6 +29,31 @@ void jack_bauer(void)
 	}
 }
 
+
+/**
+ * hour - hour section
+ * @h: hour integer
+ * Return: returns value of hour
+**/
+int hour(int h)
+{
+	if (h < 10)
+	{
+		_putchar('0');
+	}
+	else if (h < 20)
+	{
+		_putchar('1');
+	}
+	else
+	{
+		_putchar('2');
+	}
+
+	return (h);
+}
+
+
 /**
  * minute - minute section
  * @m: minute integer
@@ -62,28 +87,4 @@ int minute(int m)
 	}
 
 	return (m);
-}
-
-
-/**
- * hour - hour section
- * @h: hour integer
- * Return: returns value of hour
-**/
-int hour(int h)
-{
-	if (h < 10)
-	{
-		_putchar('0');
-	}
-	else if (h < 20)
-	{
-		_putchar('1');
-	}
-	else
-	{
-		_putchar('2');
-	}
-
-	return (h);
 }
