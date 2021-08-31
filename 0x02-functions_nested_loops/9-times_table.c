@@ -13,7 +13,7 @@ void times_table(void)
 
 	for (i = 0; i <= 9; i++)
 	{
-		for (j = 0; j<= 9; j++)
+		for (j = 0; j <= 9; j++)
 		{
 			res = i * j;
 			my_putchar(res);
@@ -43,7 +43,8 @@ void my_putchar(int var)
 {
 
 	/* print '-' for negative numbers */
-	if (var < 0) {
+	if (var < 0)
+	{
 		_putchar('-');
 		var = var * -1;
 	}
