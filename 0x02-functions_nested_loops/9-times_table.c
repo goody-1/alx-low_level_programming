@@ -3,13 +3,14 @@
 void my_putchar(int);
 
 /**
- * times_table - prints the times table from 0 to 
+ * times_table - prints the times table from 0 to
  * Return: returns no value
 **/
 
 void times_table(void)
 {
 	int i, j, res;
+
 	for (i = 0; i <= 9; i++)
 	{
 		for (j = 0; j<= 9; j++)
@@ -38,7 +39,8 @@ void times_table(void)
  * Return: returns no value
 **/
 
-void my_putchar(int var) {
+void my_putchar(int var)
+{
 
 	/* print '-' for negative numbers */
 	if (var < 0) {
@@ -46,13 +48,14 @@ void my_putchar(int var) {
 		var = var * -1;
 	}
 
-	/* First remove the last digit of number and print
+	/*
+	 * First remove the last digit of number and print
 	 * the remaining digits using recursion, then print
 	 * the last digit
 	*/
 
-	if (var/10)
-		my_putchar(var/10);
+	if (var / 10)
+		my_putchar(var / 10);
 
-	_putchar(var%10 + '0');
+	_putchar(var % 10 + '0');
 }
