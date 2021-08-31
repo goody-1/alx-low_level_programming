@@ -1,7 +1,7 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * main - the main program
+ * main - program that prints Holberton, followed by a new line.
  *
  * Return: returns 0
  *
@@ -9,9 +9,16 @@
 
 int main(void)
 {
-	char *text = "Holberton";
+	char text[10] = "Holberton";
 
-	print_alphabet;
+	int i;
+
+	for (i = 0; i < 9; i++)
+	{
+	   _putchar(text[i]);
+	}
+
+	_putchar('/n');
 
 	return (0);
 }
