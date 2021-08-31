@@ -17,7 +17,7 @@ int main(void)
 			res += i;
 		}
 	}
-	printf("%d\n", res);
+	printf("%d\n", res - 1);
 
 	return (0);
 }
