@@ -2,7 +2,7 @@
 
 /**
  * print_alphabet - print lowercase characters of the alphabet
- *	
+ *
  * Return: Always 0.
 **/
 
