@@ -8,20 +8,32 @@
 
 int main(void)
 {
-	long int num = 612852475143;
-	long int count;
+	long unsigned int num = 4162;
+	long unsigned int count, i;
+	unsigned int sum = 0;
 
 	for (count = num - 1; count > 1; count--)
 	{
-		if (num % count == 0)
+		for (i = 2; i < count; i++)
 		{
-			printf("%li", count);
+			if ((count % i == 0))
+			{
+				sum += 1;
+			}
+		}
+
+		if ((sum == 0) && (num % count == 0))
+		{
+			printf("%lu", count);
 			break;
 		}
+
+		sum = 0;
 	}
 
 	printf("\n");
 
 	return (0);
 }
+
 
