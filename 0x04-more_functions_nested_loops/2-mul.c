@@ -1,4 +1,4 @@
-#include "holberton.h"
+// #include "holberton.h"
 
 /**
 * mul - a function that multiplies two integers
