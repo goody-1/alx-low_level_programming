@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	long unsigned int num = 4162;
+	long unsigned int num = 1231952;
 	long unsigned int count, i;
 	unsigned int sum = 0;
 
