@@ -1,5 +1,6 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
+#ifndef MAIN_H
+
+#define MAIN_H
 
 #include <stdio.h>
 
@@ -10,4 +11,4 @@ int a_and_b_equal(int a, int b, int c);
 int convert_day(int month, int day);
 void print_remaining_days(int month, int day, int year);
 
-#endif /* HOLBERTON_H */
+#endif /* MAIN_H */
