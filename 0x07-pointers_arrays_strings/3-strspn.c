@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
-* _strchr - function that locates a character in a string.
+* _strspn - that gets the length of a prefix substring
 *
-* @s: string to be searched
+* @s: string to be checked
 * @accept: substring
 *
 * Return:  number of bytes in the initial segment of s
@@ -28,12 +28,12 @@ unsigned int _strspn(char *s, char *accept)
 			if (s[i] != accept[j])
 			{
 
-				// printf("\n j is %d\n", j);
-				// printf("%c => %c\n", s[i], accept[j]);
+				/* printf("\n j is %d\n", j); */
+				/* printf("%c => %c\n", s[i], accept[j]); */
 			}
 			else
 			{
-				// printf("%c => %c\n", s[i], accept[j]);
+				/* printf("%c => %c\n", s[i], accept[j]); */
 
 				break;
 
@@ -46,5 +46,5 @@ unsigned int _strspn(char *s, char *accept)
 			return (i);
 	}
 
-	// printf("%d, %d\n", len_s, len_accept);
+	/* printf("%d, %d\n", len_s, len_accept); */
 }
