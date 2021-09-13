@@ -41,7 +41,7 @@ unsigned int _strspn(char *s, char *accept)
 
 		}
 
-		if (j == (len_accept - 1) && s[i] != accept[j])
+		if (j > (len_accept - 2) && s[i] != accept[j])
 			return (i);
 	}
 
