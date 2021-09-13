@@ -42,11 +42,10 @@ unsigned int _strspn(char *s, char *accept)
 		}
 
 		if (j == (len_accept - 1) && s[i] != accept[j])
-
 			return (i);
 	}
 
 	/* printf("%d, %d\n", len_s, len_accept); */
 
-	return (0);
+	return (i);
 }
