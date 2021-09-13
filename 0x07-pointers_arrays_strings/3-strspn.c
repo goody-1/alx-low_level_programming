@@ -47,4 +47,6 @@ unsigned int _strspn(char *s, char *accept)
 	}
 
 	/* printf("%d, %d\n", len_s, len_accept); */
+
+	return (0);
 }
