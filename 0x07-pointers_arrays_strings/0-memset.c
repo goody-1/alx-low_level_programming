@@ -3,8 +3,8 @@
 /**
 * _memset - function that fills memory with a constant byte.
 *
-* Description: The _memset() function fills the first n bytes of the memory area
-* pointed to by s with the constant byte b
+* Description: The _memset() function fills the first n bytes of the memory
+* area pointed to by s with the constant byte b
 * overwriting the terminating null byte (\0) at the end of dest,
 * and then adds a terminating null byte
 *
@@ -24,5 +24,5 @@ char *_memset(char *s, char b, unsigned int n)
 		s[i] = b;
 	}
 
-	return s;
+	return (s);
 }
