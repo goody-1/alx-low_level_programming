@@ -15,9 +15,7 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int len_needle = 0;
-	int i = 0, j = 0, k = 0;
-	int stop = 0;
+	int len_needle = 0, i = 0, j = 0, k = 0, stop = 0;
 	char *p;
 
 	p = NULL;
@@ -26,8 +24,6 @@ char *_strstr(char *haystack, char *needle)
 	{
 		len_needle++;
 	}
-
-	printf("length of needle is %d\n", len_needle);
 
 	while (haystack[i] != '\0' && !stop)
 	{
@@ -39,26 +35,23 @@ char *_strstr(char *haystack, char *needle)
 				{
 					if (haystack[i] == needle[j])
 					{
-						/* printf("%c => %c\n", haystack[i], needle[j]); */
-						i++; j++;
+						i++;
+						j++;
 					}
 				}
-				if (k > (len_needle - 2)  && i > (len_needle - 2) && (haystack[i] == needle[j]))
+				if (k > (len_needle - 2)  && i > (len_needle - 2) &&
+				(haystack[i] == needle[j]))
 				{
-					/* printf("should stop here \n\n"); */
-					p = &haystack[i-len_needle];
-
-					/* return (haystack[i-len_needle]); */
-
+					p = &haystack[i - len_needle];
 					stop = 1;
 					break;
 				}
 			}
 		}
-		if (k > (len_needle - 2)  && i > (len_needle - 2) && (haystack[i] == needle[j]))
+		if (k > (len_needle - 2)  && i > (len_needle - 2)
+		&& (haystack[i] == needle[j]))
 			break;
 		i++;
 	}
-
 	return (p);
 }
