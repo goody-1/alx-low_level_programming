@@ -15,6 +15,7 @@ char *_strpbrk(char *s, char *accept)
 {
 	int len_s = 0, len_accept = 0;
 	int i, j, *p;
+	char *p;
 
 	while (s[len_s] != '\0')
 		len_s++;
