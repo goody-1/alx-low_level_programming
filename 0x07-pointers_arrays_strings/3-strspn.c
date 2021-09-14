@@ -28,15 +28,10 @@ unsigned int _strspn(char *s, char *accept)
 			if (s[i] != accept[j])
 			{
 
-				/* printf("\n j is %d\n", j); */
-				/* printf("%c => %c\n", s[i], accept[j]); */
 			}
 			else
 			{
-				/* printf("%c => %c\n", s[i], accept[j]); */
-
 				break;
-
 			}
 
 		}
@@ -44,8 +39,6 @@ unsigned int _strspn(char *s, char *accept)
 		if (j > (len_accept - 2) && s[i] != accept[j])
 			return (i);
 	}
-
-	/* printf("%d, %d\n", len_s, len_accept); */
 
 	return (i);
 }
