@@ -20,7 +20,10 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	printf("%d\n", argv[0] * argv[1]);
+	int first = atoi(argv[0]);
+	int second = atoi(argv[1]);
+
+	printf("%d\n", first * second);
 
 	return (0);
 }
