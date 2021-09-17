@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	int first = (int)argv[0];
-	int second = (int)argv[1];
+	int first = argv[0];
+	int second = argv[1];
 
 	printf("%d\n", first * second);
 
