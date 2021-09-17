@@ -13,8 +13,6 @@
 
 int main(int argc, char *argv[])
 {
-	int first, second, count;
-
 	int count, sum = 0;
 
 
