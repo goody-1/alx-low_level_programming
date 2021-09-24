@@ -2,7 +2,7 @@
 
 
 /**
- * strdup - function that returns a pointer to a newly allocated space
+ * _strdup - function that returns a pointer to a newly allocated space
  * in memory, which contains a copy of the string given as a parameter
  *
  * @str: string to be duplicated
@@ -20,14 +20,16 @@ char *_strdup(char *str)
 	while (str[len_str] != '\0')
 		len_str++;
 
-	s = malloc(len_str * sizeof(char));
+	s = malloc((len_str + 1) * sizeof(char));
 
-	if (str == NULL || s == NULL)
+	if (str == NULL)
 		return (NULL);
 
 	for (i = 0; i < len_str; i++)
 		s[i] = str[i];
 
+	if (s == NULL)
+		return (NULL);
 
 	return (s);
 }
