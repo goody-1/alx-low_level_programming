@@ -15,10 +15,10 @@
 
 void *malloc_checked(unsigned int b)
 {
-	unsigned int *s = 0;
+	unsigned int *s;
 
 	if (s == NULL)
-		exit(98);
+		EXIT_FAILURE;
 
 	s = malloc(b);
 
