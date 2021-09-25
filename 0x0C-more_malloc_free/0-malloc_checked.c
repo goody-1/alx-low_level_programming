@@ -15,13 +15,13 @@
 
 void *malloc_checked(unsigned int b)
 {
-    unsigned int *s;
+	unsigned int *s;
 
 	if (s == NULL)
 		EXIT_FAILURE;
 
 	s = malloc(b);
 
-    return (s);
+	return (s);
 
 }
