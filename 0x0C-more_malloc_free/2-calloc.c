@@ -33,7 +33,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	fill = s;
 
-	while (i < (size *nmemb))
+	while (i < (size * nmemb))
 	{
 		fill[i] = '\0';
 		i++;
