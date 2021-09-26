@@ -40,7 +40,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		len_s2++;
 
 	if (n >= len_s2)
-		n = len_s2;
+		n = len_s2 + 1;
 
 	len_s = len_s1 + n;
 
