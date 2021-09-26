@@ -20,6 +20,7 @@ int *array_range(int min, int max)
 {
 	int *arr, diff;
 	int i = 0;
+
 	diff = max - min;
 
 	if (min > max)
