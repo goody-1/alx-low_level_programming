@@ -1,5 +1,5 @@
-#ifndef SUM
-#define SUM
+#ifndef SUM_H
+#define SUM_H
 
 /**
  *	SUM - the sum function-like macro
@@ -9,4 +9,4 @@
 
 #define SUM(x, y) ((x) + (y))
 
-#endif /* SUM */
+#endif /* SUM_H */
