@@ -13,6 +13,8 @@
 
 void print_dog(struct dog *d)
 {
+	char *nothing = "";
+
 	if (d != NULL)
 	{
 		/* check if d.name or d.owner is null and respond accordingly */
@@ -32,5 +34,5 @@ void print_dog(struct dog *d)
 			printf("Name: %s\nAge: (nil)\nOwner: %s\n", d->name, d->owner);
 	}
 	else
-		printf(NULL);
+		printf("%s", nothing);
 }
