@@ -1,9 +1,11 @@
-#ifndef MY_DOG
+#ifndef DOG_H
 
 typedef struct dog {
     char *name;
     char *owner;
     float age;
-} MY_DOG;
+} dog;
 
-#endif /* MY_DOG */
+void init_dog(struct dog *d, char *name, float age, char *owner);
+
+#endif /* DOG_H */
