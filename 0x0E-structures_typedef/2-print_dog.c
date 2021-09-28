@@ -21,17 +21,12 @@ void print_dog(struct dog *d)
 
 		if (d->name == NULL)
 			d->name = "(nil)";
-		else if (d->owner == NULL)
+		if (d->owner == NULL)
 			d->owner = "(nil)";
+		if (!(d->age))
+			d->age = 0
 
-		/* handling d.age of type float separately */
-
-		if (d->age)
-		{
-			printf("Name: %s\nAge: %f\nOwner: %s\n", d->name, d->age, d->owner);
-		}
-		else
-			printf("Name: %s\nAge: (nil)\nOwner: %s\n", d->name, d->owner);
+		printf("Name: %s\nAge: %f\nOwner: %s\n", d->name, d->age, d->owner);
 	}
 	else
 		printf("%s", nothing);
