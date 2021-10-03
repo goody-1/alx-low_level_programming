@@ -7,17 +7,20 @@
  * @separator: the string to be printed between the strings
  * - don't print if separator is NULL
  * @n: last variable before the ellipsis
+ * @...: variable number of strings to be printed.
  *
  * - if one of the string is NULL, print (nil) instead
  *
  * Return: void
  */
 
+
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
-	va_list strings;
 	char *str;
+	va_list strings;
+
 
 	va_start(strings, n);
 
@@ -25,7 +28,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		str = va_arg(strings, char *);
 
-		if (str != NULL)
+		if (str == NULL)
+			printf("(nil)");
+		else
 			printf("%s", str);
 
 		if (i != (n - 1) && separator != NULL)
