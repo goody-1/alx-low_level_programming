@@ -1,7 +1,7 @@
 #include "variadic_functions.h"
 
 /**
- * sum_them_all - a variadic function that prints numbers,
+ * print_numbers - a variadic function that prints numbers,
  * followed by a new line
  *
  * @separator: the string to be printed between numbers
