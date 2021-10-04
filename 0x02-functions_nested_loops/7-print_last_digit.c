@@ -10,15 +10,8 @@ int print_last_digit(int n)
 {
 	int rem;
 
-	if (n >= 0)
-	{
-		rem = n % 10;
-	}
-	else
-	{
-		n = -n;
-		rem = n % 10;
-	}
+
+	rem = abs(n) % 10;
 
 	_putchar (rem + '0');
 
