@@ -1,13 +1,15 @@
 #include "main.h"
 
+int hour(int h);
+int minute(int m);
+
+
 /**
  * jack_bauer - prints every minute of the day of Jack Bauer,
  * starting from 00:00 to 23:59
  * Return: returns value of last digit
 **/
 
-int hour(int h);
-int minute(int m);
 
 void jack_bauer(void)
 {
