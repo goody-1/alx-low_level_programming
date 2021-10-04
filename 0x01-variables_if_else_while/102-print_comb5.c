@@ -9,42 +9,38 @@
 
 int main(void)
 {
-	int n1, n2, n3, n4;
+	int c, i, k, j;
 
-	for (n1 = '0'; n1 <= '9'; n1++)
+	for (c = 48; c <= 57; c++)
 	{
-		for (n2 = '0'; n2 <= '9'; n2++)
+		for (i = 48; i <= 57; i++)
 		{
-			for (n3 = '0'; n3 <= '9'; n3++)
+			for (k = 48; k <= 57; k++)
 			{
-				for (n4 = '0'; n4 <= '9'; n4++)
+				for (j = 48; j <= 57; j++)
 				{
-					if ((((n1 + n2) < (n3 + n4) && n1 <= n3) || n1 < n3)
-					&& ((n1 + n2 + n3 + n4) < 227))
+				if (((k + j) > (c + i) &&  k >= c) || c < k)
+				{
+					putchar(c);
+					putchar(i);
+					putchar(' ');
+					putchar(k);
+					putchar(j);
+
+					if (c + i + k + j == 227 && c == 57)
 					{
-						putchar(n1);
-						putchar(n2);
-						putchar(' ');
-						putchar(n3);
-						putchar(n4);
-						putchar(',');
-						putchar(' ');
+					break;
 					}
-					else if (((n1 + n2) < (n3 + n4) && n1 <= n3) || n1 < n3)
+					else
 					{
-						putchar(n1);
-						putchar(n2);
-						putchar(' ');
-						putchar(n3);
-						putchar(n4);
+					putchar(',');
+					putchar(' ');
 					}
+				}
 				}
 			}
 		}
 	}
-
 	putchar('\n');
-
 	return (0);
-
 }
