@@ -9,32 +9,32 @@
 
 int main(void)
 {
-	int c, i, k, j;
+	int n1, n2, n3, n4;
 
-	for (c = 48; c <= 57; c++)
+	for (n1 = 48; n1 <= 57; n1++)
 	{
-		for (i = 48; i <= 57; i++)
+		for (n2 = 48; n2 <= 57; n2++)
 		{
-			for (k = 48; k <= 57; k++)
+			for (n3 = 48; n3 <= 57; n3++)
 			{
-				for (j = 48; j <= 57; j++)
+				for (n4 = 48; n4 <= 57; n4++)
 				{
-				if (((k + j) > (c + i) &&  k >= c) || c < k)
+				if (((n3 + n4) > (n1 + n2) &&  n3 >= n1) || n1 < n3)
 				{
-					putchar(c);
-					putchar(i);
+					putchar(n1);
+					putchar(n2);
 					putchar(' ');
-					putchar(k);
-					putchar(j);
+					putchar(n3);
+					putchar(n4);
 
-					if (c + i + k + j == 227 && c == 57)
+					if (n1 + n2 + n3 + n4 == 227 && n1 == 57)
 					{
-					break;
+						break;
 					}
 					else
 					{
-					putchar(',');
-					putchar(' ');
+						putchar(',');
+						putchar(' ');
 					}
 				}
 				}
