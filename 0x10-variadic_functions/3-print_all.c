@@ -12,7 +12,6 @@ void print_all(const char * const format, ...);
  *
  * @format: the string to be printed between the strings
  * - don't print if separator is NULL
- * @n: last variable before the ellipsis
  * @...: variable number of strings to be printed.
  *
  * - if one of the string is NULL, print (nil) instead
