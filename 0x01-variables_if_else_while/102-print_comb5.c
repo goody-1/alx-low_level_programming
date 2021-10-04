@@ -19,19 +19,24 @@ int main(void)
 			{
 				for (n4 = '0'; n4 <= '9'; n4++)
 				{
-					if (((n1 + n2) < (n3 + n4) && n1 <= n3) || n1 < n3)
+					if ((((n1 + n2) < (n3 + n4) && n1 <= n3) || n1 < n3)
+					&& ((n1 + n2 + n3 + n4) < 227))
 					{
 						putchar(n1);
 						putchar(n2);
 						putchar(' ');
 						putchar(n3);
 						putchar(n4);
-
-						if ((n1 + n2 + n3 + n4) < 227)
-						{
-							putchar(',');
-							putchar(' ');
-						}
+						putchar(',');
+						putchar(' ');
+					}
+					else if (((n1 + n2) < (n3 + n4) && n1 <= n3) || n1 < n3)
+					{
+						putchar(n1);
+						putchar(n2);
+						putchar(' ');
+						putchar(n3);
+						putchar(n4);
 					}
 				}
 			}
