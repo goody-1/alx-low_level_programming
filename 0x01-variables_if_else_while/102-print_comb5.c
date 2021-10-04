@@ -9,31 +9,33 @@
 
 int main(void)
 {
-	int num1, num2, num3, num4;
+	int n1, n2, n3, n4;
 
-	for (num1 = '0'; num1 <= '9'; num1++)
+	for (n1 = '0'; n1 <= '9'; n1++)
 	{
-		for (num2 = '0'; num2 <= '9'; num2++)
+		for (n2 = '0'; n2 <= '9'; n2++)
 		{
-			for (num3 = '0'; num3 <= '9'; num3++)
+			for (n3 = '0'; n3 <= '9'; n3++)
 			{
-				for (num4 = '0'; num4 <= '9'; num4++)
+				for (n4 = '0'; n4 <= '9'; n4++)
 				{
-					if (num2 < num4)
+					if (((n1 + n2) < (n3 + n4) && n1 <= n3) || n1 < n3)
 					{
-						putchar(num1);
-						putchar(num2);
+						putchar(n1);
+						putchar(n2);
 						putchar(' ');
-						putchar(num3);
-						putchar(num4);
-						putchar(',');
-						putchar(' ');
-					}
+						putchar(n3);
+						putchar(n4);
 
+						if ((n1 + n2 + n3 + n4) < 227)
+						{
+							putchar(',');
+							putchar(' ');
+						}
+					}
 				}
 			}
 		}
-
 	}
 
 	putchar('\n');
