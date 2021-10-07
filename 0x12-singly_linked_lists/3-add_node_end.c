@@ -18,14 +18,6 @@ list_t *add_node_end(list_t **head, const char *str)
 	unsigned int len = 0;
 	list_t *new_node = malloc(sizeof(list_t));
 
-	while (str_copy[len] != '\0')
-		len++;
-
-	new_node->str = str_copy;
-	new_node->len = len;
-	new_node->next = NULL;
-
-
 	if (new_node == NULL)
 		return (NULL);
 
@@ -34,6 +26,13 @@ list_t *add_node_end(list_t **head, const char *str)
 		free(new_node);
 		return (NULL);
 	}
+
+	while (str_copy[len] != '\0')
+		len++;
+
+	new_node->str = str_copy;
+	new_node->len = len;
+	new_node->next = NULL;
 
 	if (*head == NULL)
 		*head = new_node;
