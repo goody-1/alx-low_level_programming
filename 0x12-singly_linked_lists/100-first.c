@@ -9,5 +9,8 @@
 
 void before_main(void)
 {
-	printf("You're beat! and yet, you must allow,\nI bore my house upon my back!\n");
+	char *first_break = "You're beat! and yet, you must allow,";
+	char *second_break = "I bore my house upon my back!";
+
+	printf("%s\n%s\n", first_break, second_break);
 }
