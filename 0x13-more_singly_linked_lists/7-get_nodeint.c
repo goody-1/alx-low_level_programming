@@ -5,7 +5,7 @@
  * nth node of a listint_t linked list
  *
  * @head: starting node
- * @index: index of element to be removed
+ * @index: index of element to be returned
  *
  * Return: node or NULL if it does not exist
  */
