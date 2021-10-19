@@ -70,7 +70,7 @@ void copy_textfile(char *file_from, char *file_to)
 
 	if (dest < 0)
 	{
-		dprintf(2, "Error: Can't write to %s", file_to);
+		dprintf(2, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
 
@@ -82,12 +82,12 @@ void copy_textfile(char *file_from, char *file_to)
 
 	if (close(source) == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d", source);
+		dprintf(2, "Error: Can't close fd %d\n", source);
 		exit(100);
 	}
 	if (close(dest) == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d", dest);
+		dprintf(2, "Error: Can't close fd %d\n", dest);
 		exit(100);
 	}
 }
