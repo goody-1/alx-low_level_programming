@@ -21,14 +21,17 @@ int append_text_to_file(const char *filename, char *text_content)
 	if ((fd < 0) || (filename == NULL))
 		return (-1);
 
-	while (text_content[len] != '\0')
-		len++;
+	if (text_content != NULL)
+	{
+		while (text_content[len] != '\0')
+			len++;
 
-	sz = write(fd, text_content, len);
-	close(fd);
+		sz = write(fd, text_content, len);
+		close(fd);
 
-	if (sz < 1)
-		return (-1);
+		if (sz < 1)
+			return (-1);
+	}
 
 	return (1);
 }
