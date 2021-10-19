@@ -74,9 +74,11 @@ void copy_textfile(char *file_from, char *file_to)
 		exit(99);
 	}
 
-	while ((read_in = read(source, buffer, BUFFERSIZE)) > 0)
+	read_in = read(source, buffer, BUFFERSIZE;
+
+	if (read_in > 0)
 	{
-		if (read_in != -1)
+		while ((read_in = read(source, buffer, BUFFERSIZE)) > 0)
 		{
 			write_out = write(dest, buffer, read_in);
 			if (write_out == -1)
@@ -85,11 +87,11 @@ void copy_textfile(char *file_from, char *file_to)
 				exit(99);
 			}
 		}
-		else
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-			exit(98);
-		}
+	}
+	else
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+		exit(98);
 	}
 
 	if (close(source) == -1)
