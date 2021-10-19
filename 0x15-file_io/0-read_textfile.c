@@ -39,7 +39,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	while (c[len] != '\0')
 	{
-		printf("%c", c[len]);
+		dprintf(fd, "%c", c[len]);
 		len++;
 	}
 
