@@ -74,9 +74,9 @@ void copy_textfile(char *file_from, char *file_to)
 		exit(99);
 	}
 
-	while ((read_in = read(source, &buffer, BUFFERSIZE)) > 0)
+	while ((read_in = read(source, buffer, BUFFERSIZE)) > 0)
 	{
-		write(dest, &buffer, read_in);
+		write(dest, buffer, read_in);
 	}
 
 
