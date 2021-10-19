@@ -55,20 +55,20 @@ void copy_textfile(char *file_from, char *file_to)
 {
 	int source, dest;
 	char buffer[BUFFERSIZE];
-	ssize_t read_in;
+	ssize_t read_in, write_out;
 
 	/* source file open in read only mode */
 	source = open(file_from, O_RDONLY);
 	/* destination file open in write mode; created if not found */
 	dest = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
-	if (source < 0)
+	if (source == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
 
-	if (dest < 0)
+	if (dest == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
@@ -76,9 +76,21 @@ void copy_textfile(char *file_from, char *file_to)
 
 	while ((read_in = read(source, buffer, BUFFERSIZE)) > 0)
 	{
-		write(dest, buffer, read_in);
+		if (read_in != -1)
+		{
+			write_out = write(dest, buffer, read_in);
+			if (write_out == -1)
+			{
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+				exit(99);
+			}
+		}
+		else
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+			exit(98);
+		}
 	}
-
 
 	if (close(source) == -1)
 	{
