@@ -22,7 +22,7 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: %s file_from file_to\n", av[0]);
+		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
@@ -64,13 +64,13 @@ void copy_textfile(char *file_from, char *file_to)
 
 	if (source < 0)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
 
 	if (dest < 0)
 	{
-		dprintf(2, "Error: Can't write to %s\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
 
@@ -82,12 +82,12 @@ void copy_textfile(char *file_from, char *file_to)
 
 	if (close(source) == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", source);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", source);
 		exit(100);
 	}
 	if (close(dest) == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", dest);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dest);
 		exit(100);
 	}
 }
