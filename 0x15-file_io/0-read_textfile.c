@@ -37,11 +37,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	c[out] = '\0';
 
-	while (c[len] != '\0')
-	{
-		printf("%c", c[len]);
-		len++;
-	}
+	/*
+	* while (c[len] != '\0')
+	* {
+	*	printf("%c", c[len]);
+	*	len++;
+	* }
+	*/
+
+	len = write(STDOUT_FILENO, c, out);
 
 	close(fd);
 
