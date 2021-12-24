@@ -1,6 +1,6 @@
 #include "main.h"
 
-void my_putchar(int var);
+void recursive_putchar(int var);
 
 /**
  * print_times_table - prints the n times table, starting with 0
@@ -11,58 +11,57 @@ void my_putchar(int var);
 
 void print_times_table(int n)
 {
-	int i, j, res;
+	int i, j, p, tens, unit;
 
-	if (n > 0 && n < 15)
+	if (n < 0 || n > 15)
+		return;
+
+	for (i = 0; i <= n; i++)
 	{
-		for (i = 0; i <= n; i++)
+		for (j = 0; j <= n; j++)
 		{
-			for (j = 0; j <= n; j++)
-			{
-				res = i * j;
-				my_putchar(res);
+			p = i * j;
+			tens = p / 10;
+			unit = p % 10;
 
-				if (j != n)
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
-				if (res < 10)
-				{
-					_putchar(' ');
-				}
+			if (j != 0 && p < 10)
+			{
+				_putchar(' ');
+				_putchar(' ');
 			}
-			_putchar('\n');
+			else if (j != 0)
+			{
+				if (p < 100)
+				{
+					_putchar(' ');
+				}
+				recursive_putchar(tens);
+			}
+			_putchar(unit + '0');
+
+			if (j != n)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+			else
+				_putchar('\n');
 		}
 	}
 }
 
-
 /**
- * my_putchar - prints numbers as they are with putchar
- * @var: number to be tested
- * Return: returns no value
+ * recursive_putchar - prints numbers as they are with putchar
+ * @var: number to be print
+ * Return: void
 **/
-
-void my_putchar(int var)
+void recursive_putchar(int var)
 {
-
-	/* print '-' for negative numbers */
-
 	if (var < 0)
-	{
-		_putchar('-');
-		var = var * -1;
-	}
-
-	/*
-	 * First remove the last digit of number and print
-	 * the remaining digits using recursion, then print
-	 * the last digit
-	*/
+		return;
 
 	if (var / 10)
-		my_putchar(var / 10);
+		recursive_putchar(var / 10);
 
 	_putchar(var % 10 + '0');
 }
