@@ -7,25 +7,24 @@
 
 int main(void)
 {
+	unsigned long a = 1;
+	unsigned long b = 2;
+	unsigned long c = 3;
+
 	int i;
-	long unsigned int fib[49];
 
-	fib[0] = 1; fib[1] = 2;
-
-	printf("%lu, %lu, ", fib[0], fib[1]);
-
-	for (i = 2; i < 50; i++)
+	printf("1, 2, ");
+	for (i = 3; i <= 50; i++)
 	{
-		fib[i] = fib[i - 1] + fib[i - 2];
-		if (i == 49)
-		{
-			printf("%lu", fib[i]);
-		}
-		else
-		{
-			printf("%lu, ", fib[i]);
-		}
+	    c = a + b;
+	    printf("%ld", c);
+	    a = b;
+	    b = c;
+
+	    if (i != 50)
+	        printf(", ");
 	}
+	printf("\n");
 
 	return (0);
 }
