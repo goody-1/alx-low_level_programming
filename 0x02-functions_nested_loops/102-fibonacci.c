@@ -16,13 +16,13 @@ int main(void)
 	printf("1, 2, ");
 	for (i = 3; i <= 50; i++)
 	{
-	    c = a + b;
-	    printf("%ld", c);
-	    a = b;
-	    b = c;
+		c = a + b;
+		printf("%ld", c);
+		a = b;
+		b = c;
 
-	    if (i != 50)
-	        printf(", ");
+		if (i != 50)
+			printf(", ");
 	}
 	printf("\n");
 
