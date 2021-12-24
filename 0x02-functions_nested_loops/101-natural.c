@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	int i, res = 1;
+	int i, res = 0;
 
 	for (i = 3; i < 1024; i++)
 	{
@@ -17,7 +17,7 @@ int main(void)
 			res += i;
 		}
 	}
-	printf("%d\n", res - 1);
+	printf("%d\n", res);
 
 	return (0);
 }
