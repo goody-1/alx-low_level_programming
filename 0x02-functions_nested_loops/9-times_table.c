@@ -1,7 +1,5 @@
 #include "main.h"
 
-void my_putchar(int);
-
 /**
  * times_table - prints the times table from 0 to
  * Return: returns no value
@@ -9,54 +7,26 @@ void my_putchar(int);
 
 void times_table(void)
 {
-	int i, j, res;
+	int i, j, p;
 
 	for (i = 0; i <= 9; i++)
-	{
-		for (j = 0; j <= 9; j++)
-		{
-			res = i * j;
-			my_putchar(res);
+    {
+        for (j = 0; j <= 9; j++)
+        {
+            p = i * j;
+            if (j != 0 && p / 10 == 0)
+                _putchar(' ');
+            else if (j != 0)
+                _putchar(p / 10 + '0');
+            _putchar(p % 10 + '0');
 
-			if (j != 9)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
-			if (res < 10)
-			{
-				_putchar(' ');
-			}
-		}
-		_putchar('\n');
-	}
-}
-
-
-/**
- * my_putchar - prints numbers as they are with putchar
- * @var: number to be tested
- * Return: returns no value
-**/
-
-void my_putchar(int var)
-{
-
-	/* print '-' for negative numbers */
-	if (var < 0)
-	{
-		_putchar('-');
-		var = var * -1;
-	}
-
-	/*
-	 * First remove the last digit of number and print
-	 * the remaining digits using recursion, then print
-	 * the last digit
-	*/
-
-	if (var / 10)
-		my_putchar(var / 10);
-
-	_putchar(var % 10 + '0');
+            if (j != 9)
+            {
+                _putchar(',');
+                _putchar(' ');
+            }
+            else
+                _putchar('\n');
+        }
+    }
 }
