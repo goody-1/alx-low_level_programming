@@ -8,7 +8,7 @@
 
 int _atoi(char *s)
 {
-	int i = 0, res = 0;
+	unsigned int i = 0, res = 0;
 	int flag = 1;
 
 	while (s[i] != '\0')
