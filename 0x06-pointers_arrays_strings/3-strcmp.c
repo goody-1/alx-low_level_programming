@@ -1,4 +1,5 @@
 #include "main.h"
+int _strlen(char *s);
 
 /**
 * _strcmp - compares two strings
@@ -14,26 +15,37 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int i, result;
+	unsigned int i;
+	int big_size = 0;
 
-	for (i = 0; s1[i] == s2[i] && s1[i] == '\0'; i++)
-    {
-
-    }
-
-	if (s1[i] < s2[i])
-	{
-		result = -15;
-	}
-	else if (s1[i] > s2[i])
-	{
-		result = 15;
-	}
+	if (_strlen(s1) > _strlen(s2))
+		big_size = _strlen(s1);
 	else
+		big_size = _strlen(s2);
+
+	for (i = 0; i < big_size; i++)
 	{
-		result = 0;
+		if (s1[i] > s2[i])
+			return (2);
+		else if (s1[i] < s2[i])
+			return (-3);
 	}
 
-	return (result);
+	return (0);
 }
 
+/**
+* _strlen - returns length of a string
+*
+* @s: string
+* Return: length of string;
+*/
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+		i++;
+
+	return (i);
+}
