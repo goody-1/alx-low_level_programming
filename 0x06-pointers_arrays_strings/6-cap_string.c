@@ -2,33 +2,29 @@
 
 /**
 * cap_string - capitalizes all words of a string
-* @str: the string to be converted
+* @s: the string to be converted
 * Return: a string of capitalized words
 */
 
 
-char *cap_string(char *str)
+char *cap_string(char *s)
 {
 	int i = 0;
 
-	while (str[i] != '\0')
+	if (s[0] >= 'a' && s[0] <= 'z')
+		s[0] = s[0] - 32;
+
+	while (s[i] != '\0')
 	{
-		if (str[i] == ' ' || str[i] == ',' || str[i] == ';' ||
-				str[i] == '.' || str[i] == '!' || str[i] == '?' ||
-				str[i] == '"' || str[i] == '(' || str[i] == ')' ||
-				str[i] == '{' || str[i] == '}'  || str[i] == 10  ||
-				str[i] == 9 || str[i] == 11 || str[i] == 13)
+		if (s[i] == ' ' || s[i] == '\n' || s[i] == ',' || s[i] == ';' ||
+			s[i] == '.' || s[i] == '!' || s[i] == '?' || s[i] == '"' ||
+			s[i] == '(' || s[i] == ')' || s[i] == '{' || s[i] == '}' ||
+			s[i] == '\t')
 		{
-			if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-			{
-				str[i + 1] = str[i + 1] - 32;
-			}
-
+			if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+				s[i + 1] = s[i + 1] - 32;
 		}
-
 		i++;
 	}
-
-	return (str);
+	return (s);
 }
-
