@@ -15,8 +15,7 @@ int _strlen(char *s);
 
 int _strcmp(char *s1, char *s2)
 {
-	unsigned int i;
-	int big_size = 0;
+	unsigned int i, big_size = 0;
 
 	if (_strlen(s1) > _strlen(s2))
 		big_size = _strlen(s1);
