@@ -9,38 +9,14 @@
 * Return: void
 */
 
-
 void reverse_array(int *a, int n)
 {
-	int s[100];
-	int i = 0, c, j = 0;
+	int i, temp;
 
-	for (c = n - 1; c >= 0; c--)
+	for (i = 0; i < n; i++, n--)
 	{
-		s[i] = a[c];
-
-		i++;
+		temp = a[i];
+		a[i] = a[n - 1];
+		a[n - 1] = temp;
 	}
-
-	/* a = s; */
-
-	while (j < n)
-	{
-		*(a + j) = *(s + j);
-
-		j++;
-	}
-
-	/* *a = *s; */
-
-	/*
-	 * while (j < n)
-	 * {
-	 * printf("%d ", a[j]);
-	 * j++;
-	 * }
-	 *
-	*/
-
 }
-
