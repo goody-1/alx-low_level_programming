@@ -2,24 +2,28 @@
 
 /**
 * rot13 - encodes a string using rot13
-* @str: the string to be encoded
+* @s: the string to be encoded
 * Return: encoded string
 */
 
-char *rot13(char *str)
+char *rot13(char *s)
 {
-	int i = 0, j = 0;
-	char first[5] = {'a', 'e', 'o', 't', 'l'};
-	char leet[5] = {'4', '3', '0', '7', '1'};
+	int i = 0, j;
+	char letters[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char encoded[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 	{
-
-		
+		for (j = 0; j < 52; j++)
+		{
+			if (s[i] == letters[j])
+			{
+				s[i] = encoded[j];
+				break;
+			}
+		}
 		i++;
 	}
-
-	return (str);
-
+	return (s);
 }
 
