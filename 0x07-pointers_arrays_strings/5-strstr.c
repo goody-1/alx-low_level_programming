@@ -12,46 +12,40 @@
 * or NULL if no such byte is found
 */
 
-
 char *_strstr(char *haystack, char *needle)
 {
-	int len_needle = 0, i = 0, j = 0, k = 0, stop = 0;
-	char *p;
-
-	p = NULL;
+	int i = 0, j = 0, k = 0, len_needle = 0;
 
 	while (needle[len_needle] != '\0')
-	{
-		len_needle++;
-	}
+	len_needle++;
 
-	while (haystack[i] != '\0' && !stop)
+	while (haystack[i] != '\0')
 	{
-		for (j = 0; j < len_needle; j++)
+		while (needle[j] != '\0')
 		{
-			if (haystack[i] == needle[j] && !stop)
-			{
-				for (k = 0; k < len_needle; k++)
-				{
-					if (haystack[i] == needle[j])
-					{
-						i++;
-						j++;
-					}
-				}
-				if (k > (len_needle - 2)  && i > (len_needle - 2) &&
-				(haystack[i] == needle[j]))
-				{
-					p = &haystack[i - len_needle];
-					stop = 1;
-					break;
-				}
-			}
-		}
-		if (k > (len_needle - 2)  && i > (len_needle - 2)
-		&& (haystack[i] == needle[j]))
+			if (haystack[i] != needle[0])
 			break;
+
+		else if (haystack[i] == needle[0])
+		{
+		k = 0;
+			while ((i + k) < (len_needle + i))
+			{ /*keeping track of index*/
+
+				if (haystack[i + k] == needle[k])
+				{
+					if (k == len_needle - 1)
+					return (&haystack[i]);
+					k++;
+				}
+				else
+				break;
+			}
+		i++;
+		}
+		j++;
+		}
+		j = 0;
 		i++;
 	}
-	return (p);
 }
