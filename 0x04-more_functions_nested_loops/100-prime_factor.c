@@ -1,39 +1,28 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
-* main - finds and prints the largest prime factor
-* of the number 612852475143
-* Return: no return (return is void)
-*/
-
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-	long unsigned int num = 1231952;
-	long unsigned int count, i;
-	unsigned int sum = 0;
+	long num = 612852475143, temp = num, quotient;
+	int i = 2;
 
-	for (count = num - 1; count > 1; count--)
+	while (i < 5000)
 	{
-		for (i = 2; i < count; i++)
+		if (temp % i == 0)
 		{
-			if ((count % i == 0))
-			{
-				sum += 1;
-			}
+		  /* printf("temp %ld is divisible by %d; ", temp, i); */
+			temp = temp / i;
+		  /* printf("its quotient is %ld\n", temp); */
+			i = 2;
 		}
-
-		if ((sum == 0) && (num % count == 0))
-		{
-			printf("%lu", count);
-			break;
-		}
-
-		sum = 0;
+		i++;
 	}
-
-	printf("\n");
+	quotient = temp;
+	printf("%ld\n", quotient);
 
 	return (0);
 }
-
-
