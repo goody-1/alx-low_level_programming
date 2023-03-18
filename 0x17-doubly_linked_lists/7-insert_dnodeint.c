@@ -15,11 +15,26 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *node = malloc(sizeof(dlistint_t));
 	size_t len = dlistint_len(*h);
+	dlistint_t *temp;
 
 	if ((int) idx < 0 || idx >= len || node == NULL)
 		return (NULL);
 
 	node->n = n;
+
+	/* It was necessary to bring out this block of code below
+	 * as the head is not correctly modified in the node_d function
+	*/
+	if (idx == 0)
+	{
+		temp = *h;
+		node->next = temp;
+		temp->prev = node;
+		node->prev = NULL;
+		*h = node;
+
+		return (*h);
+	}
 	node = node_d(*h, node, idx);
 
 	return (node);
@@ -38,15 +53,7 @@ dlistint_t *node_d(dlistint_t *h, dlistint_t *node, unsigned int idx)
 {
 	unsigned int i = 0;
 
-	if (idx == 0)
-	{
-		node->next = h;
-		node->prev = NULL;
-		h->prev = node;
-	}
-	else
-	{
-		while (i < idx)
+	while (i < idx)
 		{
 			if (i == idx - 1)
 			{
@@ -59,7 +66,7 @@ dlistint_t *node_d(dlistint_t *h, dlistint_t *node, unsigned int idx)
 			i++;
 			h = h->next;
 		}
-	}
+
 	return (node);
 }
 /**
