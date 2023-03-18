@@ -17,10 +17,18 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	size_t len = dlistint_len(*h);
 	dlistint_t *temp;
 
+	node->n = n;
+
+	if (*h == NULL)
+	{
+		node->next = *h;
+		node->prev = NULL;
+		*h = node;
+
+		return (*h);
+	}
 	if ((int) idx < 0 || idx >= len || node == NULL)
 		return (NULL);
-
-	node->n = n;
 
 	/**
 	 *  It was necessary to bring out this block of code below
