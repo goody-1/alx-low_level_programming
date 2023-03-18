@@ -22,7 +22,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	node->n = n;
 
-	/* It was necessary to bring out this block of code below
+	/**
+	 *  It was necessary to bring out this block of code below
 	 * as the head is not correctly modified in the node_d function
 	*/
 	if (idx == 0)
@@ -54,18 +55,18 @@ dlistint_t *node_d(dlistint_t *h, dlistint_t *node, unsigned int idx)
 	unsigned int i = 0;
 
 	while (i < idx)
+	{
+		if (i == idx - 1)
 		{
-			if (i == idx - 1)
-			{
-				node->next = h->next;
-				node->prev = h;
-				(h->next)->prev = node;
-				h->next = node;
-				break;
-			}
-			i++;
-			h = h->next;
+			node->next = h->next;
+			node->prev = h;
+			(h->next)->prev = node;
+			h->next = node;
+			break;
 		}
+		i++;
+		h = h->next;
+	}
 
 	return (node);
 }
