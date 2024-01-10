@@ -11,6 +11,7 @@ int is_palindrome(char *s)
 {
 	int str_len = str_length(s);
 	int i = 0;
+	int result;
 	char *substring;
 
 	if (str_len == 0 || str_len == 1)
@@ -27,7 +28,7 @@ int is_palindrome(char *s)
 			substring[i] = s[i + 1];
 			i++;
 		}
-		int result = is_palindrome(substring);
+		result = is_palindrome(substring);
 
 		/* free the allocated memory for substring */
 		free(substring);
