@@ -9,7 +9,7 @@ int str_length(char *s);
  */
 int is_palindrome(char *s)
 {
-	int str_len = str_length(*s);
+	int str_len = str_length(s);
 	int i = 0;
 	char *substring;
 
