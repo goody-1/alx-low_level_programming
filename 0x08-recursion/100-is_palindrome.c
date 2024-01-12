@@ -18,7 +18,7 @@ int is_palindrome(char *s)
 		return (1);
 
 	/* allocate memory for the substring */
-	substring = (char *)malloc((str_len - 1) * sizeof(char));
+	substring = (char *)malloc((str_len) * sizeof(char));
 
 	if (s[0] == s[str_len - 1]) /* confirm if ending characters are same */
 	{
