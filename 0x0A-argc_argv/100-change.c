@@ -11,10 +11,7 @@ int main(int argc, char **argv)
 {
 	unsigned int long i;
 	int denos[] = {25, 10, 5, 2, 1};
-	int deno;
-	int amount;
-	int rem;
-	int no_of_coins = 0;
+	int deno, amount, rem, no_of_coins = 0;
 
 	if (argc != 2)
 	{
@@ -26,26 +23,28 @@ int main(int argc, char **argv)
 
 	if (amount < 0)
 		printf("%d\n", 0);
-
-	for (i = 0; i < sizeof(denos) / sizeof(denos[0]); i++)
+	else
 	{
-		while (amount > 0)
+		for (i = 0; i < sizeof(denos) / sizeof(denos[0]); i++)
 		{
-			if (amount >= denos[i])
+			while (amount > 0)
 			{
-				deno = denos[i];
-				rem = amount % deno;
-				no_of_coins += (amount - rem) / deno;
-				amount = rem;
+				if (amount >= denos[i])
+				{
+					deno = denos[i];
+					rem = amount % deno;
+					no_of_coins += (amount - rem) / deno;
+					amount = rem;
+				}
+				/*
+				* if remainder is less that of current denominator
+				* go to the next one
+				*/
+				else
+					break;
 			}
-			/*
-			 * if remainder is less that of current denominator
-			 * go to the next one
-			 */
-			else
-				break;
 		}
+		printf("%d\n", no_of_coins);
 	}
-	printf("%d\n", no_of_coins);
 	exit(EXIT_SUCCESS);
 }
