@@ -16,13 +16,17 @@ void print_number(int n)
 		_putchar('-');
 		if (temp == INT_MIN)
 		{
+			/* get leftmost bit of -21474883648; -2 */
 			lmb = temp / 1000000000;
+			/* negate the lmb and print character */
 			lmb = -lmb;
 			_putchar('0' + lmb);
+			/* add this number to remove the leftmost bit for easy operation */
 			temp += 2000000000;
 		}
 		temp = -temp;
 	}
+	/* get power of temp */
 	while (temp / tens > 9)
 		tens *= 10;
 
