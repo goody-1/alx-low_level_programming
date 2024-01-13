@@ -8,22 +8,20 @@
 
 void print_number(int n)
 {
-	unsigned int c;
-
-	c = n;
+	int tens = 1, temp = n;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		c = -n;
+		temp = -n;
 	}
+	while (temp / tens > 9)
+		tens *= 10;
 
-	if (c / 10)
+	while (tens >= 1)
 	{
-		print_number(c / 10);
+		_putchar('0' + temp / tens);
+		temp %= tens;
+		tens /= 10;
 	}
-
-	_putchar((c % 10) + '0');
-
 }
-
