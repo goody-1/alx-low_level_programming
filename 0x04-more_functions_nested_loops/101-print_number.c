@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
 * print_number - prints an integer
@@ -10,6 +11,14 @@ void print_number(int n)
 {
 	int tens = 1, temp = n;
 
+	if (n == INT_MIN)
+	{
+		_putchar('-');
+		n /= 10;
+		print_number(-(n % 10));
+
+		return;
+	}
 	if (n < 0)
 	{
 		_putchar('-');
