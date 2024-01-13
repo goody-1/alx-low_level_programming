@@ -9,20 +9,19 @@
 
 void print_number(int n)
 {
-	int tens = 1, temp = n;
+	int tens = 1, temp = n, lmb;
 
-	if (n == INT_MIN)
-	{
-		_putchar('-');
-		n /= 10;
-		print_number(-(n % 10));
-
-		return;
-	}
 	if (n < 0)
 	{
 		_putchar('-');
-		temp = -n;
+		if (temp == INT_MIN)
+		{
+			lmb = temp / 1000000000;
+			lmb = -lmb;
+			_putchar('0' + lmb);
+			temp += 2000000000;
+		}
+		temp = -temp;
 	}
 	while (temp / tens > 9)
 		tens *= 10;
