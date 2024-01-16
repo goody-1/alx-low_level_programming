@@ -18,7 +18,6 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	printf("ac is %d\n", ac);
 	for (i = 0; i < ac; i++)
 	{
 		len = (int) str_len(av[i]);
