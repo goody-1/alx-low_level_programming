@@ -19,55 +19,54 @@ char **strtow(char *str)
 
 	str_length = str_len(str);
 
+	/* Count the number of words */
 	for (i = 0; i < str_length; i++)
 	{
-		if (str[i] == ' ' && str[i + 1] != ' ' && str[i + 1] != '\0')
+		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
 			words_num++;
 	}
-	/* number of words is number of spaces plus 1 */
-	words_num++;
-	printf("word num is %d\n", words_num);
 
+	/* Allocate space for the array of pointers to words */
 	words = malloc(sizeof(char *) * (words_num + 1));
 	if (words == NULL)
 		return (NULL);
 
 	for (i = 0; i < words_num; i++)
 	{
-		len = 0;
-		/* get length of word */
+		/* Skip leading spaces */
+		while (k < str_length && str[k] == ' ')
+			k++;
 
-		for (; k < str_length; k++)
+		/* Calculate the length of the current word */
+		len = 0;
+		while (k < str_length && str[k] != ' ')
 		{
-			if (str[k] != ' ')
-				len++;
-			else
-				break;
+			len++;
+			k++;
 		}
 
-		/* allocate space for word with null terminator */
-		words[i] = malloc(sizeof(char) * len);
+		/* Allocate space for the word with null terminator */
+		words[i] = malloc(sizeof(char) * (len + 1));
 
 		if (words[i] == NULL)
 		{
+			/* Free allocated memory on failure */
 			while (i >= 0)
 				free(words[i--]);
-			/* then free the array of pointers */
 			free(words);
 			return (NULL);
 		}
 
-
+		/* Copy the characters of the current word */
 		for (j = 0; j < len; j++)
 		{
-			if (str[k] != ' ')
-			{
-				words[i][j] = str[k];
-				k++;
-			}
+			words[i][j] = str[k - len + j];
 		}
-		words[i][len] = '\0';
+		words[i][len] = '\0'; /* Null-terminate the word */
 	}
+
+	/* Null-terminate the array of pointers */
+	words[words_num] = NULL;
 
 	return (words);
 }
