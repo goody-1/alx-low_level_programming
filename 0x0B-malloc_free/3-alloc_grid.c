@@ -18,27 +18,32 @@ int **alloc_grid(int width, int height)
 	if (width < 1 || height < 1)
 		return (NULL);
 
+	/* each row contains a pointer to an array */
 	matrix = malloc(sizeof(int *) * height);
 	if (matrix == NULL)
 		return (NULL);
 
 	while (i < height)
 	{
+		/* now we talk about the cells */
 		matrix[i] = malloc(sizeof(int) * width);
 
 		if (matrix[i] == NULL)
 		{
+			/* free all rows to which memory was allocated */
 			while (i >= 0)
 				free(matrix[i--]);
-
+			/* then free the array of pointers */
 			free(matrix);
 			return (NULL);
 		}
+		/* Initialize all cells to 0 */
 		while (j < width)
 		{
 			matrix[i][j] = 0;
 			j++;
 		}
+		/* reset j */
 		j = 0;
 		i++;
 	}
