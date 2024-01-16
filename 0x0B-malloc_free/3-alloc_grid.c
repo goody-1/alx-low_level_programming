@@ -13,37 +13,34 @@
 int **alloc_grid(int width, int height)
 {
 	int **matrix;
-	int *row;
 	int i = 0, j = 0;
 
 	if (width < 1 || height < 1)
 		return (NULL);
 
-	matrix = malloc(sizeof(int) * width + 1);
+	matrix = malloc(sizeof(int *) * height);
 	if (matrix == NULL)
-	{
-		free(matrix);
 		return (NULL);
-	}
 
-	while (i < width)
+	while (i < height)
 	{
-		matrix[i] = malloc(sizeof(int) * height * width + 1);
+		matrix[i] = malloc(sizeof(int) * width);
 
 		if (matrix[i] == NULL)
 		{
+			while (i >= 0)
+				free(matrix[i--]);
+
 			free(matrix);
 			return (NULL);
 		}
-		row = matrix[i];
-		while (j < height)
+		while (j < width)
 		{
-			row[j] = 0;
+			matrix[i][j] = 0;
 			j++;
 		}
 		j = 0;
 		i++;
 	}
-
 	return (matrix);
 }
