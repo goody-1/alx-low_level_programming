@@ -25,6 +25,8 @@ char **strtow(char *str)
 		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
 			words_num++;
 	}
+	if (words_num == 0)
+		return (NULL);
 
 	/* Allocate space for the array of pointers to words */
 	words = malloc(sizeof(char *) * (words_num + 1));
