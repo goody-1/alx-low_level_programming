@@ -20,10 +20,15 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 
 	matrix = malloc(sizeof(int) * width + 1);
+	if (matrix == NULL)
+		return (NULL);
 
 	while (i < width)
 	{
 		matrix[i] = malloc(sizeof(int) * height + 1);
+
+		if (matrix[i] == NULL)
+			return (NULL);
 		row = matrix[i];
 		while (j < height)
 		{
