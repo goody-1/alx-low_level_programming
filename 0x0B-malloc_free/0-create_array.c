@@ -11,21 +11,18 @@
 */
 char *create_array(unsigned int size, char c)
 {
-	char *array, *head_store;
+	char *array;
 	unsigned int i = 0;
 
 	array = malloc(sizeof(int) * size);
 	if (array == NULL || size == 0)
 		return (NULL);
 
-	head_store = array;
-	/* malloc'd space might not be initialized to null, don't do *array != '\0'*/
 	while (i < size)
 	{
-		*array = c;
-		array++;
+		array[i] = c;
 		i++;
 	}
 
-	return (head_store);
+	return (array);
 }
