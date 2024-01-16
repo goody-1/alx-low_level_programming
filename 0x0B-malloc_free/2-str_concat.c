@@ -15,6 +15,11 @@ char *str_concat(char *s1, char *s2)
 	char *concated;
 	int s1_len, s2_len, total_len, counter = 0, i = 0;
 
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
 	s1_len = str_len(s1);
 	s2_len = str_len(s2);
 	total_len = s1_len + s2_len + 1;
