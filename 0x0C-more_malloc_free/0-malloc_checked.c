@@ -11,10 +11,8 @@ void *malloc_checked(unsigned int b)
 {
 	void *mem = malloc(b);
 
-	if (mem == NULL || b >= INT_MAX || b < 1)
-	{
-		free(mem);
+	if (mem == NULL || b < 1)
 		exit(98);
-	}
+
 	return (mem);
 }
