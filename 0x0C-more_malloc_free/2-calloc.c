@@ -7,7 +7,7 @@
  * @size: byte size of each element
  *
  * Return: pointer to allocated memory
- *          or NULL if size is 0 or malloc fails
+ *          or NULL if size is 0 or malloc fails or nmemb is 0
 */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
@@ -16,7 +16,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	unsigned char *byte_mem;
 	unsigned int i;
 
-	if (nmemb == 0 || mem == NULL)
+	if (nmemb == 0 || size == 0 || mem == NULL)
 		return (NULL);
 
 	byte_mem = (unsigned char *)mem;
