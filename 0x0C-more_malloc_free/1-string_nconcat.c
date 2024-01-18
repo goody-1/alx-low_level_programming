@@ -14,9 +14,12 @@ unsigned int str_len(char *str);
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *new_string;
-	unsigned int len = str_len(s1), i, sum, j;
+	unsigned int len = str_len(s1), i, sum, j, len2 = str_len(s2);
 
-	sum = n + len;
+	if (n > len2)
+		sum = len2 + len;
+	else
+		sum = n + len;
 	new_string = malloc(sizeof(char) * (sum + 1));
 
 	if (new_string == NULL)
