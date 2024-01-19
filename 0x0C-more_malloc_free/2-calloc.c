@@ -17,7 +17,10 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	unsigned int i;
 
 	if (nmemb == 0 || size == 0 || mem == NULL)
+	{
+		free(mem);
 		return (NULL);
+	}
 
 	byte_mem = (unsigned char *)mem;
 	for (i = 0; i < (nmemb * size); i++)
