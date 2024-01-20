@@ -1,10 +1,12 @@
 #include "main.h"
+#include "stdint.h"
 
 int _atoi(char *s);
 void print_error(void);
 unsigned int str_len(char *str);
 void print_number(int n);
-int only_digits(char *str);
+int is_digits(char *str);
+void multiply(char *num1, char *num2);
 
 /**
  * main - program entry
@@ -17,21 +19,16 @@ int only_digits(char *str);
 int main(int argc, char **argv)
 {
 	char *p1, *p2;
-	size_t mul, num1, num2;
 
 	if (argc != 3)
 		print_error();
 	p1 = argv[1];
 	p2 = argv[2];
 
-	if (only_digits(p1) != 1 || only_digits(p2) != 1)
+	if (!is_digits(p1) || !is_digits(p2))
 		print_error();
 
-	num1 = _atoi(p1);
-	num2 = _atoi(p2);
-
-	mul = num1 * num2;
-	print_number(mul);
+	multiply(p1, p2);
 
 	_putchar('\n');
 
@@ -84,11 +81,11 @@ int _atoi(char *s)
 
 
 /**
-* only_digits - check whether a string contains only digits
+* is_digits - check whether a string contains only digits
 * @str: string to check
 * Return: 1 if only digits, 0 otherwise
 */
-int only_digits(char *str)
+int is_digits(char *str)
 {
 	unsigned int i;
 	int tf = 0;
@@ -141,4 +138,59 @@ void print_number(int n)
 		print_number(c / 10);
 
 	_putchar((c % 10) + '0');
+}
+
+/**
+* multiply - multiply two numbers
+*
+* @num1: first string of integers to be multiplied
+* @num2: second string of integers to be multiplied
+*
+* Return: no return (return is void)
+*/
+void multiply(char *num1, char *num2)
+{
+	int len1 = str_len(num1), sum, mul;
+	int len2 = str_len(num2), i, j, start;
+	int *result;
+
+	result = malloc(sizeof(int) * (len1 + len2));
+	if (result == NULL)
+		print_error();
+
+	/* Initialize result space to 0 and i.e 234 * 123 has length of 6 */
+	for (i = 0; i < len1 + len2; i++)
+		result[i] = 0;
+
+	/**
+	 * What these loops do is multiply this way
+	 *		1	2	3	5
+	 *	x	1	0	9	1
+	 *	------------------
+	 *
+	 *	------------------
+	*/
+	for (i = len1 - 1; i >= 0; i--)
+	{
+		for (j = len2 - 1; j >= 0; j--)
+		{
+			mul = (num1[i] - '0') * (num2[j] - '0');
+			sum = mul + result[i + j + 1];
+
+			result[i + j] += sum / 10;
+			result[i + j + 1] = sum % 10;
+		}
+	}
+
+	start = 0;
+
+	while (start < len1 + len2 && result[start] == 0)
+		start++;
+
+	for (i = start; i < len1 + len2; i++)
+		_putchar(result[i] + '0');
+
+	_putchar('\n');
+
+	free(result);
 }
