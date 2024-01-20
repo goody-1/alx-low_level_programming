@@ -30,8 +30,6 @@ int main(int argc, char **argv)
 
 	multiply(p1, p2);
 
-	_putchar('\n');
-
 	return (0);
 }
 /**
@@ -150,16 +148,18 @@ void print_number(int n)
 */
 void multiply(char *num1, char *num2)
 {
-	int len1 = str_len(num1), sum, mul;
-	int len2 = str_len(num2), i, j, start;
+	int len1 = str_len(num1), sum, mul, isZero = 1;
+	int len2 = str_len(num2), i, j, start, result_len;
 	int *result;
 
 	result = malloc(sizeof(int) * (len1 + len2));
 	if (result == NULL)
 		print_error();
 
+	result_len = len1 + len2;
+
 	/* Initialize result space to 0 and i.e 234 * 123 has length of 6 */
-	for (i = 0; i < len1 + len2; i++)
+	for (i = 0; i < result_len; i++)
 		result[i] = 0;
 
 	/**
@@ -184,11 +184,34 @@ void multiply(char *num1, char *num2)
 
 	start = 0;
 
-	while (start < len1 + len2 && result[start] == 0)
-		start++;
+	/* Check if the entire result is zero */
+	for (i = 0; i < result_len; i++)
+	{
+		if (result[i] != 0)
+		{
+			isZero = 0;
+			break;
+		}
 
-	for (i = start; i < len1 + len2; i++)
-		_putchar(result[i] + '0');
+	}
+
+	/* If not all zeros, find the first non-zero digit */
+	if (!isZero)
+	{
+		while (start < result_len && result[start] == 0)
+			start++;
+	}
+
+	/* Print the result */
+	if (isZero)
+	{
+		_putchar('0');
+	}
+	else
+	{
+		for (i = start; i < result_len; i++)
+			_putchar(result[i] + '0');
+	}
 
 	_putchar('\n');
 
