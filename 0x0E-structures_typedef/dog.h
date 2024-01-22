@@ -8,25 +8,22 @@
  * struct dog - a dog object
  *
  * @name: name of dog
- * @age: age of dog
  * @owner: dog's owner
+ * @age: age of dog
 */
-struct dog
+typedef struct dog
 {
 	char *name;
-	float age;
 	char *owner;
-};
+	float age;
+} dog_t;
 
 
 /* function prototypes */
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
 dog_t *new_dog(char *name, float age, char *owner);
+void free_dog(dog_t *d);
 
-/**
- * dog_t - Typedef for dog
- */
-typedef struct dog dog_t;
 
 #endif
