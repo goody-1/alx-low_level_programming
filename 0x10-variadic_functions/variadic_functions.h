@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <stddef.h>
+#include <stdarg.h>
 
 /* prototypes for functions */
 int sum_them_all(const unsigned int n, ...);
