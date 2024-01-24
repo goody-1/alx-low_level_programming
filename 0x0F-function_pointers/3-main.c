@@ -26,8 +26,8 @@ int main(int argc, char **argv)
 	operator = argv[2];
 	num2 = atoi(argv[3]);
 
-	if (operator[0] != '+' && operator[0] != '-' && operator[0] != '*' &&
-		operator[0] != '/' && operator[0] != '%')
+	if ((operator[0] != '+' && operator[0] != '-' && operator[0] != '*' &&
+		operator[0] != '/' && operator[0] != '%') || operator[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
