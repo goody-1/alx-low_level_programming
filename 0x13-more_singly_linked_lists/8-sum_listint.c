@@ -11,10 +11,7 @@ int sum_listint(listint_t *head)
 	int sum = 0;
 
 	if (!head)
-	{
-		printf("Not head\n");
 		return (0);
-	}
 
 	while (head)
 	{
