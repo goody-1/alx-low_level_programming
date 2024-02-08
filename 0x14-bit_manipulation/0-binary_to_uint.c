@@ -42,27 +42,6 @@ unsigned int binary_to_uint(const char *b)
 	return (dec);
 }
 /**
-* print_number - prints an integer
-* @n: integer to be printed
-* Return: no return (return is void)
-*/
-void print_number(int n)
-{
-	unsigned int c;
-
-	c = n;
-	if (n < 0)
-	{
-		_putchar('-');
-		c = -n;
-	}
-
-	if (c / 10)
-		print_number(c / 10);
-
-	_putchar((c % 10) + '0');
-}
-/**
 * positive_power - gets the power of a number
 * @n: integer
 * @p: index of n
@@ -71,6 +50,7 @@ void print_number(int n)
 int positive_power(int n, int p)
 {
 	int i, pow = n;
+
 	if (n == 0)
 		return (0);
 	if (p == 0)
