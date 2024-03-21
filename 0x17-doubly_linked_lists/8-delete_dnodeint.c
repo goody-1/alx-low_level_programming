@@ -1,15 +1,14 @@
 #include "lists.h"
 size_t dlistint_len(const dlistint_t *h);
-dlistint_t *node_delete(dlistint_t *h, unsigned int idx);
+void node_delete(dlistint_t **head, unsigned int index);
 
 /**
- * insert_dnodeint_at_index - insert node at index.
+ * delete_dnodeint_at_index - Deletes a node at a given index
+ *								in a doubly linked list.
+ * @head: Double pointer to the head of the doubly linked list.
+ * @index: Index of the node to be deleted.
  *
- * @h: double pointer to head of list
- * @idx: index where data will be added
- * @n: data to be inserted in list
- *
- * Return: node at index
+ * Return: 1 if successful, 0 otherwise.
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
@@ -18,24 +17,47 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	if ((int) index < 0 || index >= len)
 		return (0);
 
+	node_delete(head, index);
+
 	return (1);
 }
 
-dlistint_t *node_delete(dlistint_t *head, unsigned int index)
-{
-	unsigned int i = 0;
 
-	while (i < index)
+/**
+ * node_delete - Deletes a node at a given index in a doubly linked list.
+ * @head: Pointer to the head of the doubly linked list.
+ * @index: Index of the node to be deleted.
+ *
+ * Return: void
+ */
+void node_delete(dlistint_t **head, unsigned int index)
+{
+	dlistint_t *current = *head, *next = NULL;
+	unsigned int i;
+
+	if (*head == NULL)
+		return;
+
+	if (index == 0)
 	{
-		if (i == index - 1)
-		{
-			(head)->next = (head)->next->next;
-			((head)->next->next)->prev = (head);
-			break;
-		}
-		i++;
-		(head) = (head)->next;
+		*head = (*head)->next;
+		if (*head != NULL)
+			(*head)->prev = NULL;
+		free(current);
+		return;
 	}
+
+	for (i = 0; current != NULL && i < index - 1; i++)
+		current = current->next;
+
+	if (current == NULL || current->next == NULL)
+		return;
+
+	next = current->next->next;
+	free(current->next);
+	current->next = next;
+	if (next != NULL)
+		next->prev = current;
 }
 
 /**
