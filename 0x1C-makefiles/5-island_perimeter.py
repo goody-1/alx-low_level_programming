@@ -10,7 +10,7 @@ def island_perimeter(grid):
     res = 0
     if not grid:
         return 0
-    if not all(type(arr) == list for arr in grid):
+    if not all(type(arr) is list for arr in grid):
         return 0
     al = len(grid[0])
     if not all(len(arr) == al for arr in grid):
